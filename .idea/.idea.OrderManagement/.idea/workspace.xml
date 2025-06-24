@@ -9,7 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d25a4019-d892-4763-bb73-a884399b112a" name="Changes" comment="" />
+    <list default="true" id="d25a4019-d892-4763-bb73-a884399b112a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Order.API/Controllers/OrderHistoryController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IOrderDetailRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IOrderHistoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/IOrderHistoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/OrderDetailRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/OrderHistoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Services/OrderHistoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.API/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +30,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "r101409043"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/r101409043/OrderManagement.git",
+    "accountId": "7043cce8-8a08-4316-b578-238e57febb84"
+  }
+}]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -107,7 +129,7 @@
       <updated>1750779794154</updated>
       <workItem from="1750779795582" duration="261000" />
       <workItem from="1750780091026" duration="1431000" />
-      <workItem from="1750781550932" duration="851000" />
+      <workItem from="1750781550932" duration="1461000" />
     </task>
     <task id="LOCAL-00001" summary="Add">
       <option name="closed" value="true" />
@@ -123,6 +145,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
