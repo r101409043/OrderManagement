@@ -50,9 +50,17 @@ public class OrderRepository(OrderDbContext dbContext) : IOrderRepository
             existing.UserId = updatedOrder.UserId;
             existing.TotalPrice = updatedOrder.TotalPrice;
             existing.OrderDateTime = updatedOrder.OrderDateTime;
+            existing.Status = updatedOrder.Status;
             existing.OrderItems = updatedOrder.OrderItems;
 
             await dbContext.SaveChangesAsync();
         }
+    }
+
+    public async Task<IEnumerable<OrderEntity>> GetAllOrdersAsync()
+    {
+        return await dbContext.Orders
+            .Include(o => o.OrderItems)
+            .ToListAsync();
     }
 }

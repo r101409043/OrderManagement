@@ -4,32 +4,51 @@ using Order.ApplicationCore.Entities;
 
 namespace Order.Infrastructure.Services;
 
-public class OrderService : IOrderService
+public class OrderService(IOrderRepository orderRepository) : IOrderService
 {
-    private readonly IOrderRepository _orderRepository;
-
-    public OrderService(IOrderRepository orderRepository)
-    {
-        _orderRepository = orderRepository;
-    }
-
     public async Task<IEnumerable<OrderEntity>> GetOrdersByUserIdAsync(int userId)
     {
-        return await _orderRepository.GetOrdersByUserIdAsync(userId);
+        return await orderRepository.GetOrdersByUserIdAsync(userId);
     }
 
     public async Task<OrderEntity> GetOrderByIdAsync(int orderId)
     {
-        return await _orderRepository.GetOrderByIdAsync(orderId);
+        return await orderRepository.GetOrderByIdAsync(orderId);
     }
 
     public async Task<OrderEntity> CreateOrderAsync(OrderEntity order)
     {
-        return await _orderRepository.AddOrderAsync(order);
+        return await orderRepository.AddOrderAsync(order);
     }
 
     public async Task UpdateOrderAsync(int orderId, OrderEntity updatedOrder)
     {
-        await _orderRepository.UpdateOrderAsync(orderId, updatedOrder);
+        await orderRepository.UpdateOrderAsync(orderId, updatedOrder);
     }
+    
+    public async Task<IEnumerable<OrderEntity>> GetAllOrdersAsync()
+    {
+        return await orderRepository.GetAllOrdersAsync();
+    }
+
+    public async Task<string> GetOrderStatusAsync(int orderId)
+    {
+        var order = await orderRepository.GetOrderByIdAsync(orderId);
+        return order.Status;
+    }
+
+    public async Task CancelOrderAsync(int orderId)
+    {
+        var order = await orderRepository.GetOrderByIdAsync(orderId);
+        order.Status = "Cancelled";
+        await orderRepository.UpdateOrderAsync(orderId, order);
+    }
+
+    public async Task MarkOrderCompletedAsync(int orderId)
+    {
+        var order = await orderRepository.GetOrderByIdAsync(orderId);
+        order.Status = "Completed";
+        await orderRepository.UpdateOrderAsync(orderId, order);
+    }
+
 }

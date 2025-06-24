@@ -10,14 +10,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d25a4019-d892-4763-bb73-a884399b112a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Order.API/Controllers/OrderHistoryController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IOrderDetailRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IOrderHistoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/IOrderHistoryService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/OrderDetailRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/OrderHistoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Services/OrderHistoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.API/Controllers/AddressController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.API/Controllers/CustomerController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.API/Controllers/PaymentController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.API/Controllers/ShoppingCartController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.API/Controllers/ShoppingCartItemController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.API/Controllers/UserAddressController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IAddressRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/ICustomerRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IPaymentRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IShoppingCartItemRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IShoppingCartRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IUserAddressRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/IAddressService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/ICustomerService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/IPaymentService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/IShoppingCartItemService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/IShoppingCartService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/IUserAddressService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Entities/Address.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Entities/Customer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Entities/Payment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Entities/ShoppingCart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Entities/ShoppingCartItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.ApplicationCore/Entities/UserAddress.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/AddressRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/CustomerRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/PaymentRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/ShoppingCartItemRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/ShoppingCartRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/UserAddressRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Services/AddressService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Services/CustomerService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Services/PaymentService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Services/ShoppingCartItemService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Services/ShoppingCartService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order.Infrastructure/Services/UserAddressService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OrderManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OrderManagement/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.API/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.API/Controllers/OrderController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Order.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IOrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Repositories/IOrderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.ApplicationCore/Contracts/Services/IOrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.ApplicationCore/Entities/OrderEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.ApplicationCore/Entities/OrderEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.Infrastructure/Data/OrderHistoryDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.Infrastructure/Data/OrderHistoryDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.Infrastructure/Migrations/OrderHistoryDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.Infrastructure/Migrations/OrderHistoryDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.Infrastructure/Repositories/OrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.Infrastructure/Repositories/OrderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order.Infrastructure/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Order.Infrastructure/Services/OrderService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +167,7 @@
       <updated>1750779794154</updated>
       <workItem from="1750779795582" duration="261000" />
       <workItem from="1750780091026" duration="1431000" />
-      <workItem from="1750781550932" duration="1461000" />
+      <workItem from="1750781550932" duration="6406000" />
     </task>
     <task id="LOCAL-00001" summary="Add">
       <option name="closed" value="true" />
@@ -139,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750782407084</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add">
+      <option name="closed" value="true" />
+      <created>1750783162220</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1750783162220</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +196,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add" />
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

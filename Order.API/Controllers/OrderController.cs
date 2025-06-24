@@ -8,31 +8,52 @@ namespace Order.API.Controllers;
 [Route("api/[controller]")]
 public class OrderController(IOrderService orderService) : ControllerBase
 {
-    [HttpGet("user/{userId:int}")]
-    public async Task<IActionResult> GetOrdersByUserId(int userId)
+    [HttpGet("GetAllOrders")]
+    public async Task<IActionResult> GetAllOrders()
+    {
+        var orders = await orderService.GetAllOrdersAsync();
+        return Ok(orders);
+    }
+
+    [HttpPost("SaveOrder")]
+    public async Task<IActionResult> SaveOrder([FromBody] OrderEntity order)
+    {
+        var created = await orderService.CreateOrderAsync(order);
+        return Ok(created);
+    }
+
+    [HttpGet("CheckOrderHistory")]
+    public async Task<IActionResult> CheckOrderHistory([FromQuery] int userId)
     {
         var orders = await orderService.GetOrdersByUserIdAsync(userId);
         return Ok(orders);
     }
 
-    [HttpGet("{orderId:int}")]
-    public async Task<IActionResult> GetOrderById(int orderId)
+    [HttpGet("CheckOrderStatus")]
+    public async Task<IActionResult> CheckOrderStatus([FromQuery] int orderId)
     {
-        var order = await orderService.GetOrderByIdAsync(orderId);
-        return Ok(order);
+        var status = await orderService.GetOrderStatusAsync(orderId);
+        return Ok(new { orderId, status });
     }
 
-    [HttpPost]
-    public async Task<IActionResult> CreateOrder([FromBody] OrderEntity order)
+    [HttpPut("CancelOrder")]
+    public async Task<IActionResult> CancelOrder([FromQuery] int orderId)
     {
-        var created = await orderService.CreateOrderAsync(order);
-        return CreatedAtAction(nameof(GetOrderById), new { orderId = created.Id }, created);
+        await orderService.CancelOrderAsync(orderId);
+        return NoContent();
     }
 
-    [HttpPut("{orderId:int}")]
-    public async Task<IActionResult> UpdateOrder(int orderId, [FromBody] OrderEntity updatedOrder)
+    [HttpPost("OrderCompleted")]
+    public async Task<IActionResult> OrderCompleted([FromQuery] int orderId)
     {
-        await orderService.UpdateOrderAsync(orderId, updatedOrder);
+        await orderService.MarkOrderCompletedAsync(orderId);
+        return Ok();
+    }
+
+    [HttpPut("UpdateOrder")]
+    public async Task<IActionResult> UpdateOrder([FromBody] OrderEntity updatedOrder)
+    {
+        await orderService.UpdateOrderAsync(updatedOrder.Id, updatedOrder);
         return NoContent();
     }
 }
