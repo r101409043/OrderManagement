@@ -1,21 +1,23 @@
 using Microsoft.EntityFrameworkCore;
 using Order.ApplicationCore.Entities;
 
-namespace Order.Infrastructure.Data;
-
-public class OrderDbContext(DbContextOptions<OrderDbContext> options) : DbContext(options)
+namespace Order.Infrastructure.Data
 {
-    public DbSet<OrderEntity> Orders => Set<OrderEntity>();
-    public DbSet<OrderItem> OrderItems => Set<OrderItem>();
-
-    override protected void OnModelCreating(ModelBuilder modelBuilder)
+    public class OrderDbContext(DbContextOptions<OrderDbContext> options) : DbContext(options)
     {
-        base.OnModelCreating(modelBuilder);
+        public DbSet<OrderEntity> Orders => Set<OrderEntity>();
+        public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+        public DbSet<Category> Categories { get; set; }
 
-        modelBuilder.Entity<OrderEntity>()
-            .HasMany(o => o.OrderItems)
-            .WithOne(i => i.OrderEntity)
-            .HasForeignKey(i => i.OrderId)
-            .OnDelete(DeleteBehavior.Cascade);
+        override protected void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<OrderEntity>()
+                .HasMany(o => o.OrderItems)
+                .WithOne(i => i.OrderEntity)
+                .HasForeignKey(i => i.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }
